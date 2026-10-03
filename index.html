@@ -120,14 +120,14 @@ const mail=document.getElementById('mailScene'), celebrate=document.getElementBy
 const angelBackgroundPath='c9e8fdd4-d846-4ae2-8cb5-33ceb72020eb.png';
 const angelScene=document.getElementById('angelScene');
 if(angelBackgroundPath){angelScene.style.backgroundImage=`url("${angelBackgroundPath}")`;}
-const beachBackgroundPath='images.jpg';
+const beachBackgroundPath='sean-oulashin-KMn4VEeEPR8-unsplash.jpg';
 if(beachBackgroundPath){document.getElementById('beachBg').style.backgroundImage=`url("${beachBackgroundPath}")`;}
 const wishBackgroundPath='';
 if(wishBackgroundPath){document.getElementById('wishBg').style.backgroundImage=`url("${wishBackgroundPath}")`;}
 const letterImagePath='ChatGPT Image Oct 3, 2026, 08_04_18 PM.png';
 document.getElementById('letterPhoto').src=letterImagePath;
 const birthdayAudioPath='Happy Birthday (Background Score) - Anirudh Ravichander (1).mp3';
-let birthdayAudio=null;
+let birthdayAudio='Happy Birthday (Background Score) - Anirudh Ravichander (1).mp3';
 function startBirthdayMusic(){if(!birthdayAudioPath||birthdayAudio)return;birthdayAudio=new Audio(birthdayAudioPath);birthdayAudio.loop=true;birthdayAudio.volume=1;birthdayAudio.play().catch(()=>{})}
 startBirthdayMusic();
 document.addEventListener('click',startBirthdayMusic,{once:true});
