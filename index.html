@@ -11,6 +11,7 @@
 .scene{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transition:opacity 1.2s ease;opacity:0;pointer-events:none}
 .scene.active{opacity:1;pointer-events:auto}
 /* Envelope */
+startBirthdayMusic();
 #mailScene{background:radial-gradient(circle at 50% 35%,#27121d 0,#0d0a0d 45%,#030304 100%)}
 .mail-wrap{text-align:center;transform:translateY(-2vh)}.hint{font-size:clamp(14px,2vw,19px);letter-spacing:3px;text-transform:uppercase;color:#dcbac5;margin-bottom:25px}.envelope{width:min(82vw,520px);height:min(48vw,300px);max-height:300px;position:relative;cursor:pointer;filter:drop-shadow(0 25px 45px #000);animation:float 3s ease-in-out infinite}.env-body{position:absolute;inset:0;background:linear-gradient(145deg,#9b334e,#581629);border:1px solid #d97991;border-radius:9px;overflow:hidden}.env-body:before,.env-body:after{content:'';position:absolute;top:0;width:72%;height:100%;background:#7d2842}.env-body:before{left:-22%;transform:skewX(38deg)}.env-body:after{right:-22%;transform:skewX(-38deg)}.flap{position:absolute;left:0;right:0;top:0;height:58%;background:linear-gradient(155deg,#c34f6b,#76203b);clip-path:polygon(0 0,100% 0,50% 100%);z-index:3;border-radius:8px 8px 0 0;transform-origin:top;transition:transform 1s ease}.seal{position:absolute;z-index:4;left:50%;top:43%;transform:translate(-50%,-50%);width:62px;height:62px;border-radius:50%;background:#e7a4b6;color:#65142c;display:grid;place-items:center;font-size:28px;box-shadow:0 4px 20px #2b0715}.envelope.open .flap{transform:rotateX(180deg)}.card{position:absolute;z-index:2;left:10%;right:10%;top:10%;height:78%;background:#fff5f6;color:#5d2335;border-radius:4px;padding:28px;transform:translateY(12%);transition:transform 1s ease}.envelope.open .card{transform:translateY(-18%)}.card b{font-size:clamp(20px,4vw,34px)}
 /* Celebration */
@@ -122,14 +123,13 @@ const angelScene=document.getElementById('angelScene');
 if(angelBackgroundPath){angelScene.style.backgroundImage=`url("${angelBackgroundPath}")`;}
 const beachBackgroundPath='sean-oulashin-KMn4VEeEPR8-unsplash.jpg';
 if(beachBackgroundPath){document.getElementById('beachBg').style.backgroundImage=`url("${beachBackgroundPath}")`;}
-const wishBackgroundPath='';
+const wishBackgroundPath='3239021.jpg';
 if(wishBackgroundPath){document.getElementById('wishBg').style.backgroundImage=`url("${wishBackgroundPath}")`;}
 const letterImagePath='ChatGPT Image Oct 3, 2026, 08_04_18 PM.png';
 document.getElementById('letterPhoto').src=letterImagePath;
 const birthdayAudioPath='Happy Birthday (Background Score) - Anirudh Ravichander (1).mp3';
-let birthdayAudio='Happy Birthday (Background Score) - Anirudh Ravichander (1).mp3';
+let birthdayAudio=null;
 function startBirthdayMusic(){if(!birthdayAudioPath||birthdayAudio)return;birthdayAudio=new Audio(birthdayAudioPath);birthdayAudio.loop=true;birthdayAudio.volume=1;birthdayAudio.play().catch(()=>{})}
-startBirthdayMusic();
 document.addEventListener('click',startBirthdayMusic,{once:true});
 env.addEventListener('click',()=>{env.classList.add('open');setTimeout(()=>{mail.classList.remove('active');celebrate.classList.add('active');setTimeout(startBridge,1700)},1100)},{once:true});
 document.getElementById('continue').addEventListener('click',()=>{bridge.classList.remove('active');document.getElementById('angelScene').classList.add('active')});
