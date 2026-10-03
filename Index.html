@@ -126,7 +126,7 @@ const wishBackgroundPath='';
 if(wishBackgroundPath){document.getElementById('wishBg').style.backgroundImage=`url("${wishBackgroundPath}")`;}
 const letterImagePath='ChatGPT Image Oct 3, 2026, 08_04_18 PM.png';
 document.getElementById('letterPhoto').src=letterImagePath;
-const birthdayAudioPath='';
+const birthdayAudioPath='Happy Birthday (Background Score) - Anirudh Ravichander (1).mp3';
 let birthdayAudio=null;
 function startBirthdayMusic(){if(!birthdayAudioPath||birthdayAudio)return;birthdayAudio=new Audio(birthdayAudioPath);birthdayAudio.loop=true;birthdayAudio.volume=1;birthdayAudio.play().catch(()=>{})}
 startBirthdayMusic();
